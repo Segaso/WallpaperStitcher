@@ -24,7 +24,7 @@
                 txtWallpaperPath1.Text = OpenFileDialog.FileName;
                 pbMonitor1.Image = Image.FromFile(OpenFileDialog.FileName);
                 Monitors[0].Image = new Bitmap(OpenFileDialog.FileName);
-                Monitors[0].ScaleImage();
+                //Monitors[0].ScaleImage(); Not sure if I have to do this
             }
         }
 
@@ -35,7 +35,7 @@
                 pbMonitor2.Image = Image.FromFile(OpenFileDialog.FileName);
 
                 Monitors[1].Image = new Bitmap(OpenFileDialog.FileName);
-                Monitors[1].ScaleImage();
+                //Monitors[1].ScaleImage(); Not sure if I have to do this
             }
         }
 
@@ -58,7 +58,7 @@
 
                     int Offset = 0;
                     foreach (var Monitor in Monitors) {
-                        Wallpaper.DrawImage(Monitor.Image, new Rectangle(Offset, 0, Monitor.Image.Width, Monitor.Image.Height));
+                        Wallpaper.DrawImage(Monitor.Image, new Rectangle(Offset, 0, Monitor.Width, Monitor.Height));
                         Offset += Monitor.Width;
                     }
 
